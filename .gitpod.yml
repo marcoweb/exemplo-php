@@ -1,5 +1,5 @@
 image: gitpod/workspace-mysql
 
 tasks:
-  - init: wget -c https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz -O - | tar -xz -C .env && cp .env/.config.inc.php .env/phpMyAdmin-5.0.2-all-languages/config.inc.php
+  - init: wget -c https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz -O - | tar -xz -C .env && cp .env/.config.inc.php .env/phpMyAdmin-5.0.2-all-languages/config.inc.php ; mysql --host=localhost --user=root  < "estrutura.sql"
     command: php -S localhost:8000 -t .env/phpMyAdmin-5.0.2-all-languages
